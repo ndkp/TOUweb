@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>上2つ下3つの縁取られた雲の描画</title>
+</head>
+<body>
+    <canvas id="cloudCanvas" width="200" height="150" style="border:1px solid black;"></canvas>
+
+    <script>
+        const canvas = document.getElementById('cloudCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 雲の描画
+        function drawCloud() {
+            const centerX = 100;
+            const centerY = 50;
+            const radius = 20;
+            const offset = 25;
+
+            // 上2つの円（縁取り）
+            ctx.beginPath();
+            ctx.arc(centerX - offset, centerY, radius + 5, 0, Math.PI * 2);
+            ctx.strokeStyle = 'lightblue';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(centerX + offset, centerY, radius + 5, 0, Math.PI * 2);
+            ctx.strokeStyle = 'lightblue';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            // 下3つの円（縁取り）
+            ctx.beginPath();
+            ctx.arc(centerX - offset, centerY + offset, radius + 5, 0, Math.PI * 2);
+            ctx.strokeStyle = 'wlightblue';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY + offset, radius + 5, 0, Math.PI * 2);
+            ctx.strokeStyle = 'lightblue';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.arc(centerX + offset, centerY + offset, radius + 5, 0, Math.PI * 2);
+            ctx.strokeStyle = 'lightblue';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+
+            // 内側の円（本体）
+            ctx.beginPath();
+            ctx.arc(centerX - offset, centerY, radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'lightyellow';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(centerX + offset, centerY, radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'lightyellow';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(centerX - offset, centerY + offset, radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'lightyellow';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(centerX, centerY + offset, radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'lightyellow';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(centerX + offset, centerY + offset, radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'lightyellow';
+            ctx.fill();
+        }
+
+        drawCloud();
+    </script>
+</body>
+</html>

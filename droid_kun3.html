@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ドロイド君の描画</title>
+</head>
+<body>
+    <canvas id="droidCanvas" width="200" height="300" style="border:1px solid black;"></canvas>
+
+    <script>
+        const canvas = document.getElementById('droidCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // ドロイド君の描画
+        function drawDroid() {
+            // ドロイド君の頭
+            ctx.fillStyle = '#2ecc71';
+            ctx.fillRect(50, 50, 100, 100);
+
+            // ドロイド君の目
+            ctx.fillStyle = 'white';
+            ctx.fillRect(65, 75, 20, 20);
+            ctx.fillRect(115, 75, 20, 20);
+
+            // ドロイド君の目の瞳
+            ctx.fillStyle = 'black';
+            ctx.fillRect(75, 85, 10, 10);
+            ctx.fillRect(125, 85, 10, 10);
+
+            // ドロイド君の口
+            ctx.fillStyle = 'black';
+            ctx.fillRect(75, 115, 60, 10);
+
+            // ドロイド君の体
+            ctx.fillStyle = '#2ecc71';
+            ctx.fillRect(50, 150, 100, 100);
+
+            // ドロイド君の足
+            ctx.fillStyle = '#2ecc71';
+            ctx.fillRect(65, 260, 20, 30);
+            ctx.fillRect(115, 260, 20, 30);
+
+            // ドロイド君の手
+            ctx.fillStyle = '#2ecc71';
+            ctx.fillRect(30, 150, 20, 80);
+            ctx.fillRect(150, 150, 20, 80);
+
+            // ドロイド君のボタン
+            ctx.fillStyle = 'blue';
+            ctx.beginPath();
+            ctx.arc(100, 180, 8, 0, Math.PI * 2);
+            ctx.arc(100, 220, 8, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        drawDroid();
+    </script>
+</body>
+</html>

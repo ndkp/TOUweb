@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>丸みを帯びたドロイド君の描画</title>
+</head>
+<body>
+    <canvas id="droidCanvas" width="200" height="300" style="border:1px solid black;"></canvas>
+
+    <script>
+        const canvas = document.getElementById('droidCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // ドロイド君の描画
+        function drawDroid() {
+            // ドロイド君の頭
+            ctx.beginPath();
+            ctx.arc(100, 100, 50, 0, Math.PI * 2);
+            ctx.fillStyle = '#2ecc71';
+            ctx.fill();
+
+            // ドロイド君の目
+            ctx.beginPath();
+            ctx.arc(80, 85, 10, 0, Math.PI * 2);
+            ctx.arc(120, 85, 10, 0, Math.PI * 2);
+            ctx.fillStyle = 'white';
+            ctx.fill();
+
+            // ドロイド君の目の瞳
+            ctx.beginPath();
+            ctx.arc(80, 85, 5, 0, Math.PI * 2);
+            ctx.arc(120, 85, 5, 0, Math.PI * 2);
+            ctx.fillStyle = 'black';
+            ctx.fill();
+
+            // ドロイド君の口
+            ctx.beginPath();
+            ctx.moveTo(80, 120);
+            ctx.quadraticCurveTo(100, 140, 120, 120);
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 5;
+            ctx.stroke();
+
+            // ドロイド君の体
+            ctx.beginPath();
+            ctx.arc(100, 220, 50, 0, Math.PI, true);
+            ctx.fillStyle = '#2ecc71';
+            ctx.fill();
+
+            // ドロイド君の手
+            ctx.beginPath();
+            ctx.arc(50, 180, 15, 0, Math.PI * 2);
+            ctx.arc(150, 180, 15, 0, Math.PI * 2);
+            ctx.fillStyle = '#2ecc71';
+            ctx.fill();
+
+            // ドロイド君の足
+            ctx.beginPath();
+            ctx.arc(65, 270, 15, 0, Math.PI * 2);
+            ctx.arc(135, 270, 15, 0, Math.PI * 2);
+            ctx.fillStyle = '#2ecc71';
+            ctx.fill();
+        }
+
+        drawDroid();
+    </script>
+</body>
+</html>

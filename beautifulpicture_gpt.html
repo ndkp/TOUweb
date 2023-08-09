@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>美しい絵の描画</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="400" height="400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // 背景を塗りつぶす
+    ctx.fillStyle = 'lightblue';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // 円を描画する
+    ctx.beginPath();
+    ctx.arc(200, 200, 100, 0, 2 * Math.PI);
+    ctx.fillStyle = 'green';
+    ctx.fill();
+    ctx.lineWidth = 5;
+    ctx.strokeStyle = 'darkgreen';
+    ctx.stroke();
+
+    // 四角形を描画する
+    ctx.fillStyle = 'orange';
+    ctx.fillRect(50, 50, 150, 100);
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'darkorange';
+    ctx.strokeRect(50, 50, 150, 100);
+
+    // 線を描画する
+    ctx.beginPath();
+    ctx.moveTo(50, 200);
+    ctx.lineTo(350, 200);
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = 'red';
+    ctx.stroke();
+  </script>
+</body>
+</html>

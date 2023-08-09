@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>縁取られた雲の描写</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="200" height="100"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // 縁の色
+    ctx.strokeStyle = "lightblue";
+
+    // 本体の色
+    ctx.fillStyle = "lightyellow";
+
+    // 雲の描写
+    ctx.beginPath();
+    ctx.moveTo(50, 50);
+    ctx.bezierCurveTo(20, 70, 20, 100, 80, 100); // 左側の曲線
+    ctx.bezierCurveTo(100, 120, 150, 120, 170, 100); // 右側の曲線
+    ctx.bezierCurveTo(210, 100, 210, 70, 180, 50); // 下の曲線
+    ctx.bezierCurveTo(160, 30, 120, 30, 100, 50); // 上の曲線
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+  </script>
+</body>
+</html>

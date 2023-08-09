@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>クローバーの描写</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="200" height="200"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // ハートの描写
+    function drawHeart(x, y, size) {
+      ctx.beginPath();
+      ctx.moveTo(x, y - size);
+      ctx.bezierCurveTo(x - size, y - size, x - size, y, x, y + size);
+      ctx.bezierCurveTo(x + size, y, x + size, y - size, x, y - size);
+      ctx.closePath();
+      ctx.fillStyle = "red";
+      ctx.fill();
+    }
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const heartSize = 50;
+
+    // クローバーの描写
+    for (let i = 0; i < 4; i++) {
+      const angle = (i * Math.PI) / 2;
+      const xOffset = Math.cos(angle) * heartSize * 2.2;
+      const yOffset = Math.sin(angle) * heartSize * 2.2;
+      drawHeart(centerX + xOffset, centerY + yOffset, heartSize);
+    }
+  </script>
+</body>
+</html>

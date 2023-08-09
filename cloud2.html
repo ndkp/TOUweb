@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>縁取られた左右対称の雲の描画</title>
+</head>
+<body>
+    <canvas id="cloudCanvas" width="200" height="100" style="border:1px solid black;"></canvas>
+
+    <script>
+        const canvas = document.getElementById('cloudCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 雲の描画
+        function drawCloud() {
+            const centerX = 100;
+            const centerY = 50;
+            const radius = 20;
+
+            // 外側の円（縁取り）
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius + 5, 0, Math.PI * 2);
+            ctx.fillStyle = 'lightblue';
+            ctx.fill();
+
+            // 内側の円（本体）
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'lightyellow';
+            ctx.fill();
+
+            // // 左右対称の描画
+            // ctx.save(); // 現在の描画状態を保存
+            // ctx.scale(-1, 1); // X軸を反転して左右対称にする
+            // ctx.beginPath();
+            // ctx.arc(-centerX, centerY, radius + 5, 0, Math.PI * 2);
+            // ctx.fillStyle = 'lightblue';
+            // ctx.fill();
+            // ctx.beginPath();
+            // ctx.arc(-centerX, centerY, radius, 0, Math.PI * 2);
+            // ctx.fillStyle = 'lightyellow';
+            // ctx.fill();
+            // ctx.restore(); // 描画状態を元に戻す
+        }
+
+        drawCloud();
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>雲の描画</title>
+</head>
+<body>
+    <canvas id="cloudCanvas" width="400" height="200" style="border:1px solid black;"></canvas>
+
+    <script>
+        const canvas = document.getElementById('cloudCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // 雲の描画
+        function drawCloud() {
+            ctx.beginPath();
+            ctx.arc(100, 105, 20, 0, Math.PI * 2);
+            ctx.arc(130, 95, 30, 0, Math.PI * 2);
+            ctx.arc(160, 100, 20, 0, Math.PI * 2);
+            ctx.arc(145, 115, 30, 0, Math.PI * 2);
+            ctx.arc(115, 120, 25, 0, Math.PI * 2);
+            ctx.fillStyle = 'yellow';
+            ctx.fill();
+        }
+
+        drawCloud();
+    </script>
+</body>
+</html>

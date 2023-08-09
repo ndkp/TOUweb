@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>縁取られた花の描写</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="200" height="200"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // 縁の色
+    ctx.strokeStyle = "lightblue";
+
+    // 本体の色
+    ctx.fillStyle = "lightyellow";
+
+    // 花びらの描写
+    for (let i = 0; i < 4; i++) {
+      ctx.beginPath();
+      ctx.arc(100, 100, 60, (i * Math.PI) / 2, ((i + 1) * Math.PI) / 2); // 円弧を描画
+      ctx.lineTo(100, 100); // 中心に戻る
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fill();
+    }
+
+    // 花の中心の円
+    ctx.beginPath();
+    ctx.arc(100, 100, 15, 0, Math.PI * 2); // 中心の円
+    ctx.fillStyle = "red"; // 中心の色
+    ctx.fill();
+  </script>
+</body>
+</html>

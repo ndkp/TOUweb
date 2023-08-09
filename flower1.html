@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>縁取られた花の描写</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="200" height="200"></canvas>
+
+  <script>
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    // 縁の色
+    ctx.strokeStyle = "lightblue";
+
+    // 本体の色
+    ctx.fillStyle = "lightyellow";
+
+    // 花の描写
+    ctx.beginPath();
+    ctx.moveTo(100, 20);
+    ctx.bezierCurveTo(150, -10, 250, 60, 160, 100); // 上の曲線
+    ctx.bezierCurveTo(220, 150, 120, 200, 100, 120); // 右の曲線
+    ctx.bezierCurveTo(80, 200, -20, 150, 60, 100); // 下の曲線
+    ctx.bezierCurveTo(-40, 60, 50, -10, 100, 20); // 左の曲線
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+  </script>
+</body>
+</html>

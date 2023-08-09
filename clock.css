@@ -1,0 +1,18 @@
+body {
+    font-family: 'Futura' ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .clock {
+    font-size: 10rem;
+    color: #395232;
+    padding: 20px;
+    border: 2px solid #395232;
+    border-radius: 5px;
+    background-color: #73b574;
+  }
+  

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>丸みを帯びたドロイド君の描画</title>
+</head>
+<body>
+    <canvas id="droidCanvas" width="200" height="300" style="border:1px solid black;"></canvas>
+
+    <script>
+        // ドロイド君の描画関数
+        function workdroiddraw( wx, wy ) {
+            const canvas = document.getElementById('droidCanvas');
+            const ctx = canvas.getContext('2d');
+            const dcol = '#a4c639'; // color(164,198,57)
+            const ecol = '#ffffff'; // color(255,255,255)
+            const x = 0;
+            const y = 0;
+
+            // 顔を描く
+            ctx.beginPath();
+            ctx.arc(x + 28, y + 23, 19, 0, Math.PI * 2);
+            ctx.fillStyle = dcol;
+            ctx.fill();
+            ctx.beginPath();
+            ctx.arc(x + 20, y + 13, 1, 0, Math.PI * 2);
+            ctx.arc(x + 36, y + 13, 1, 0, Math.PI * 2);
+            ctx.fillStyle = ecol;
+            ctx.fill();
+
+            // 体を描く
+            ctx.beginPath();
+            ctx.arc(x + 15, y + 48, 4, 0, Math.PI * 2);
+            ctx.arc(x + 41, y + 48, 4, 0, Math.PI * 2);
+            ctx.rect(x + 10, y + 22, 35, 26);
+            ctx.rect(x + 15, y + 48, 26, 3);
+            ctx.fillStyle = dcol;
+            ctx.fill();
+
+            // 足を描く
+            ctx.beginPath();
+            ctx.arc(x + 22, y + 61, 4, 0, Math.PI * 2);
+            ctx.rect(x + 18, y + 51, 7, 10);
+            ctx.arc(x + 34, y + 61, 4, 0, Math.PI * 2);
+            ctx.rect(x + 30, y + 51, 7, 10);
+            ctx.fillStyle = dcol;
+            ctx.fill();
+
+            // 腕を描く
+            ctx.beginPath();
+            ctx.arc(x + 52, y + 24, 4, 0, Math.PI * 2);
+            ctx.arc(x + 52, y + 41, 4, 0, Math.PI * 2);
+            ctx.rect(x + 48, y + 25, 7, 15);
+            ctx.arc(x + 4, y + 24, 4, 0, Math.PI * 2);
+            ctx.arc(x + 4, y + 41, 4, 0, Math.PI * 2);
+            ctx.rect(x, y + 25, 7, 15);
+            ctx.fillStyle = dcol;
+            ctx.fill();
+
+            // // 描画されたドロイド君をWorkBMPに取得する
+            // const workCanvas = document.createElement('canvas');
+            // workCanvas.width = 55;
+            // workCanvas.height = 64;
+            // const workCtx = workCanvas.getContext('2d');
+            // workCtx.drawImage(canvas, x, y + 20, 55, 64, 0, 0, 55, 64);
+
+            // // WorkBMPを表示
+            // const outputCanvas = document.createElement('canvas');
+            // outputCanvas.width = 55;
+            // outputCanvas.height = 64;
+            // const outputCtx = outputCanvas.getContext('2d');
+            // outputCtx.drawImage(workCanvas, wx, wy);
+
+            // 描画したドロイド君をCanvasに描画
+            ctx.drawImage(outputCanvas, 0, 0);
+        }
+
+        workdroiddraw(0, 0);
+    </script>
+</body>
+</html>
